@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="ja">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Geolocation</title>
+    <!-- Bootstrap -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap-theme.min.css">
+    <script src="./js/mqttws31.js"></script>
+    <!-- Geolocation APIで位置情報を取得するJavascript -->
+  </head>
+  <body>
+    <h2>HTML5を用いたSmart Phoneの各種センサーの値取得</h2>
+    <h3 id="deviceid"></h3>
+    <h3>位置情報</h3>
+    <div class="table-responsive">
+      <table class="table">
+       <thead>
+        <tr><th>Keys</th><th>Values</th></tr>
+       </thead>
+       <tbody>
+        <tr><td>Latitude</td><td id="lat">&nbsp;</td></tr>
+        <tr><td>Longitude</td><td id="lng">&nbsp;</td></tr>
+        <tr><td>LatLng Accuracy</td><td id="accLatlng">&nbsp;</td></tr>
+        <tr><td>Altitude</td><td id="alt">&nbsp;</td></tr>
+        <tr><td>Altitude accuracy</td><td id="accAlt">&nbsp;</td></tr>
+        <tr><td>Heading</td><td id="heading">&nbsp;</td></tr>
+        <tr><td>Speed</td><td id="speed">&nbsp;</td></tr>
+       </tbody>
+      </table>
+     </div>
+
+    <h3>ジャイロセンサー（傾き）</h3>
+    <div class="table-responsive">
+      <table class="table">
+       <thead>
+        <tr><th>Keys</th><th>Values</th></tr>
+       </thead>
+       <tbody>
+        <tr><td>alpha</td><td id="alpha">&nbsp;</td></tr>
+        <tr><td>beta</td><td id="beta">&nbsp;</td></tr>
+        <tr><td>gamma</td><td id="gamma">&nbsp;</td></tr>
+       </tbody>
+      </table>
+     </div>
+
+    <h3>モーションセンサー（加速度）</h3>
+    <div class="table-responsive">
+      <table class="table">
+       <thead>
+        <tr><th>Keys</th><th>Values</th></tr>
+       </thead>
+       <tbody>
+        <tr><td>Acceleration: X </td><td id="ac_x">&nbsp;</td></tr>
+        <tr><td>Acceleration: Y </td><td id="ac_y">&nbsp;</td></tr>
+        <tr><td>Acceleration: Z </td><td id="ac_z">&nbsp;</td></tr>
+        <tr><td>Acceleration including Gravity: X </td><td id="acg_x">&nbsp;</td></tr>
+        <tr><td>Acceleration including Gravity: Y </td><td id="acg_y">&nbsp;</td></tr>
+        <tr><td>Acceleration including Gravity: Z </td><td id="acg_z">&nbsp;</td></tr>
+        <tr><td>Rotation: alpha </td><td id="rot_alpha">&nbsp;</td></tr>
+        <tr><td>Rotation: beta </td><td id="rot_beta">&nbsp;</td></tr>
+        <tr><td>Rotation: gamma </td><td id="rot_gamma">&nbsp;</td></tr>
+      </table>
+     </div>
+    <h3>バッテリーレベル</h3>
+    <div class="table-responsive">
+      <table class="table">
+       <thead>
+        <tr><th>Keys</th><th>Values</th></tr>
+       </thead>
+       <tbody>
+        <tr><td>Battery Level(%)</td><td id="battery_level">&nbsp;</td></tr>
+        <tr><td>Battery Discharging(s)</td><td id="battery_discharging">&nbsp;</td></tr>
+      </table>
+     </div>
+    <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+    <!-- Include all compiled plugins (below), or include individual files as needed -->
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js"></script>
+    <script type="text/javascript" src="./js/sensor_mqtt.js"></script>
+  </body>
+</html>
